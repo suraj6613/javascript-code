@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    var current = "#";
+    for (var i = 0; i < 8; i++) {
+      var str = "";
+      if (current === "*") current = "#";
+      else current = "*";
+      for (var j = 0; j < 8; j++) {
+        str = str + current;
+        if (current === "*") current = "#";
+        else current = "*";
+      }
+      console.log(str);
+    }
+  </script>
+</html>

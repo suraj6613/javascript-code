@@ -1,0 +1,116 @@
+<!-- There are several way to add a function to the employee object -->
+<!-- method-4 prototype property -->
+<html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    function Employee(edition) {
+      this.name = edition;
+    }
+
+    Employee.prototype.Edition = function () {
+      return this.name;
+    };
+    var e1 = new Employee("2005");
+    var e2 = new Employee("2006");
+
+    console.log("Employee edition = " + e1.Edition());
+    console.log("Employee edition = " + e2.Edition());
+  </script>
+</html>
+
+<!-- method-3 -->
+<!-- is by using the name of the constructor function -->
+<!-- <html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+function Employee(edition){
+    this.name=edition;
+}
+//this will throw an error because Employee constructor function don't have a 
+//getEdition property
+Employee.getEdition=function(){
+    return this.name;
+}
+var e1=new Employee("2005");
+var e2=new Employee("2006");
+
+ console.log("Employee edition = "+e1.getEdition());
+ console.log("Employee edition = "+e2.getEdition());
+  </script>
+</html> -->
+
+<!-- method-2 -->
+<!-- <html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+function Employee(edition){
+    this.name=edition;
+}
+var e1=new Employee("2005");
+// this is not the right approach because we heve to create for each object
+// and in this case e2 does not get the function value
+e1.getEdition=function(){
+    return this .name;
+}
+var e2=new Employee("2006");
+
+ console.log("Employee edition = "+e1.getEdition());
+ console.log("Employee edition = "+e2.getEdition());
+  </script>
+</html> -->
+
+<!-- method-1 -->
+<!-- <html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+function Employee(edition){
+    this.name=edition;
+// problem with this method is that if you create 100 employee object 
+// there will be 100 copies of this function in oops we dont want to do that
+// instead we want to share the same function across all objects 
+ this .getEdition=function(){
+        return this.name;
+    }
+}
+var e1=new Employee("2005");
+var e2=new Employee("2006");
+
+console.log("Employee edition = "+e1.getEdition());
+console.log("Employee edition = "+e2.getEdition());
+  </script>
+</html> -->
+
+<!-- <html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    // constructor function
+    function Person(person_name, person_age, person_gender) {
+      // assigning  parameter values to the calling object
+      (this.name = person_name),
+        (this.age = person_age),
+        (this.gender = person_gender),
+        (this.greet = function () {
+          return "Hi" + " " + this.name;
+        });
+    }
+
+    // creating objects
+    const person1 = new Person("John", 23, "male");
+    const person2 = new Person("Sam", 25, "female");
+
+    // accessing properties
+    console.log(person1.name); // "John"
+    console.log(person2.name); // "Sam"
+    console.log(person2.greet()); // "Sam"
+  </script>
+</html> -->
