@@ -1,0 +1,65 @@
+<!-- Array -->
+<!-- deleting element from array -->
+<html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    var a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // a.pop();deleting an elemnt from last postn
+    a.splice(1, 1); //splice(from which position to start,how many element to delete)
+    console.log(a);
+    a.splice(1, 0, "hello world"); //splice(from which position to start,don't delete anything,what to insert at location you mention firstly)
+    //it doesn't delete the element at that position it just come at his position shifting all the element to right
+    console.log(a);
+    a.splice(1); //delete your whole array
+    console.log(a);
+    var b = [1, 2, 3, 4, 5, 6, 7, 8];
+    console.log(b.length);
+    b.splice(b.length - 1, 0, "hello earth");
+    console.log(b);
+    b.shift(); //deleting an elemnt from first postn
+    console.log(b);
+  </script>
+</html>
+
+<!-- inserting element in array
+<html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    //  you don't need to define array in js
+    // size of array is equal no of element you have defined
+    //totally dyanamic;
+    var a = [];
+    // always use a.push() to insert data from end
+    // a.push(12);
+    // a.push(34);
+    // a.push(true);
+    a[5] = 23;
+    a.unshift(23);  // always use a.unshift() to insert data from start
+    console.log(a[10]);
+    console.log(a);
+    // in js the array are Heterogenous
+    var b = [1, 2, 3, 4, "Hello World", true];
+    console.log(b.length);
+    console.log(b);
+  </script>
+</html> -->
+
+<!-- Use js predefined function as much as you can -->
+<!-- <html>
+  <head>
+    <h1>hello world</h1>
+  </head>
+  <script>
+    //  string is immuttable you can't change the original string 
+   var a ="hello wolld";
+   a[0]="x";
+   console.log(a);
+   
+   console.log(a.toUpperCase());
+   console.log(a.toLowerCase());
+  </script>
+</html> -->
